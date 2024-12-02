@@ -1,0 +1,9 @@
+Success write login
+Success write fake password
+Success click butten-login
+test_fake_login_label is OK 
+Success write login
+Success write password
+Success click butten-login
+test_login_redirect is OK
+test_context_after_login_is_correct is OK 
