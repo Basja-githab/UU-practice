@@ -3,7 +3,6 @@ primes = []
 not_primes = []
 i = 0
 len_numbers = len(numbers)
-print(len_numbers)
 while i < len_numbers:
     number = numbers[i]
     if number > 1:
