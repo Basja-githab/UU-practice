@@ -36,24 +36,27 @@ def login():
     login_button.click()
     file.write("Success click butten-login\n")  # Запись в лог
 
-driver = setup_driver('http://www.saucedemo.com/')
-login()
-# выбор опции из drop-down списка по тексту  "Price (low to high)"
-# есть элемент select - используем класс Select
-select = Select(driver.find_element(By.XPATH,'//*[@id="header_container"]/div[2]/div/span/select'))
-sleep(2)
-select.select_by_visible_text("Price (low to high)")
-sleep(1)
-driver.quit()                                     # Завершение роаботы с драйвером
-file.close()
+if __name__ == "__main__":
+# код будет выполняться только при вызове этого модуля
+# и не будет выполняться в другой программе при импорте функций из этого модуля (в ту программу)
+    driver = setup_driver('http://www.saucedemo.com/')
+    login()
+    # выбор опции из drop-down списка по тексту  "Price (low to high)"
+    # есть элемент select - используем класс Select
+    select = Select(driver.find_element(By.XPATH,'//*[@id="header_container"]/div[2]/div/span/select'))
+    sleep(2)
+    select.select_by_visible_text("Price (low to high)")
+    sleep(1)
+    driver.quit()                                     # Завершение роаботы с драйвером
+    file.close()
 
-driver = setup_driver('https://www.lambdatest.com/selenium-playground/jquery-dropdown-search-demo')
-# выбор опции из списка через send_keys и нажатие клавиш
-click_drop = driver.find_element(By.XPATH, '//*[@id="__next"]/div/section[2]/div/div/div/div[1]/div[2]/span')
-click_drop.click()
-sleep(2)
-click_form = driver.find_element(By.XPATH, '/html/body/span/span/span[1]/input')
-click_form.send_keys('Denmark')
-click_form.send_keys(Keys.ENTER)
-sleep(3)
-driver.quit()                                     # Завершение роаботы с драйвером
+    driver = setup_driver('https://www.lambdatest.com/selenium-playground/jquery-dropdown-search-demo')
+    # выбор опции из списка через send_keys и нажатие клавиш
+    click_drop = driver.find_element(By.XPATH, '//*[@id="__next"]/div/section[2]/div/div/div/div[1]/div[2]/span')
+    click_drop.click()
+    sleep(2)
+    click_form = driver.find_element(By.XPATH, '/html/body/span/span/span[1]/input')
+    click_form.send_keys('Denmark')
+    click_form.send_keys(Keys.ENTER)
+    sleep(3)
+    driver.quit()                                     # Завершение роаботы с драйвером
